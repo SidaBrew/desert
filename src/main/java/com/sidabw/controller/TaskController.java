@@ -1,5 +1,6 @@
-package com.sidabw;
+package com.sidabw.controller;
 
+import com.sidabw.profiletest.DBConnector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/task")
 public class TaskController {
     @Autowired
-    private  DBConnector connector ;
+    private DBConnector connector ;
     @RequestMapping(value = {"/",""})
     public String hellTask(){
 

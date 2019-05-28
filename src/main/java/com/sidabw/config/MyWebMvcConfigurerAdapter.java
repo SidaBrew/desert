@@ -1,9 +1,8 @@
-package com.sidabw;
+package com.sidabw.config;
 
+import com.sidabw.config.MyInterceptor;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.*;
 
 /***
  *  Created by shao.guangze on 2019/5/27
@@ -32,7 +31,21 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
      */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/toLogin").setViewName("views/login");
+        registry.addViewController("/toh").setViewName("hello");
         super.addViewControllers(registry);
+    }
+
+    /**
+     * 拦截器
+     * @param registry
+     */
+    @Override
+    public void addInterceptors(InterceptorRegistry registry){
+
+        // addPathPatterns 用于添加拦截规则
+        // excludePathPatterns 用户排除拦截
+        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("toLogin","login");
+        super.addInterceptors(registry);
+
     }
 }

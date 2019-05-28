@@ -1,8 +1,11 @@
-package com.sidabw;
+package com.sidabw.controller;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.sidabw.ConfigBean;
+import com.sidabw.ConfigTestBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -58,7 +61,12 @@ public class UserController {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("list", a);
         System.out.println(jsonObject.toJSONString());
+    }
 
+    @GetMapping("/user/filter")
+    public String filterTest(){
+        System.out.println("aa");
+        return "aaa";
     }
 }
 
