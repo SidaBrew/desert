@@ -5,11 +5,10 @@ import com.alibaba.fastjson.JSONObject;
 import com.sidabw.ConfigBean;
 import com.sidabw.ConfigTestBean;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.*;
 
 /**
@@ -67,6 +66,27 @@ public class UserController {
     public String filterTest(){
         System.out.println("aa");
         return "aaa";
+    }
+
+    @PostMapping("/login")
+    public String loginTest(HttpServletRequest request,String username,String passWord){
+
+            if("zhangsan".equals(username)&& "123".equals(passWord)){
+            HttpSession session = request.getSession();
+            session.setAttribute("username",username);
+            session.setAttribute("passWord",passWord);
+            System.out.println("login in");
+            return "登陆成功";
+        }else{
+            return "登陆失败";
+        }
+
+    }
+
+    @PostMapping("/loginTest")
+    public String test(){
+        System.out.println("拦截器通过test ");
+        return "测试通过";
     }
 }
 

@@ -17,13 +17,14 @@ public class MyInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.println("preHandle");
         boolean flag =true;
-//        User user=(User)request.getSession().getAttribute("user");
-//        if(null==user){
-//            response.sendRedirect("toLogin");
-//            flag = false;
-//        }else{
-//            flag = true;
-//        }
+       Object username =request.getSession().getAttribute("username");
+        if(null==username){
+            //response.sendRedirect("/login");
+            response.setStatus(401);
+            flag = false;
+        }else{
+            flag = true;
+        }
         return flag;
     }
 
