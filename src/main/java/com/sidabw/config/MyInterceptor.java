@@ -20,7 +20,7 @@ public class MyInterceptor implements HandlerInterceptor {
        Object username =request.getSession().getAttribute("username");
         if(null==username){
             //response.sendRedirect("/login");
-            response.setStatus(401);
+           // response.setStatus(401);
             flag = false;
         }else{
             flag = true;

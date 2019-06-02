@@ -1,9 +1,8 @@
 package com.sidabw.controller;
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.sidabw.ConfigBean;
-import com.sidabw.ConfigTestBean;
+import com.sidabw.config.ConfigBean;
+import com.sidabw.config.ConfigTestBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

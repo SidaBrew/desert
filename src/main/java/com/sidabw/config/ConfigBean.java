@@ -1,4 +1,4 @@
-package com.sidabw;
+package com.sidabw.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
