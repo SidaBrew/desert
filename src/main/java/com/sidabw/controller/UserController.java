@@ -87,5 +87,15 @@ public class UserController {
         System.out.println("拦截器通过test ");
         return "测试通过";
     }
+
+    public static void main(String[] args){
+
+        List a = new ArrayList();
+        a.add(1);
+        a.add(2);
+        a.add(3);
+        for (int i = 1;i<a.size();i++)
+            System.out.println(a.get(i));
+}
 }
 
