@@ -1,6 +1,6 @@
 package com.utils;
 
-import com.example.entity.User;
+import com.dao.example.entity.User;
 
 import java.util.List;
 

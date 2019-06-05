@@ -1,6 +1,6 @@
-package com.example.mapper;
+package com.dao.example.mapper;
 
-import com.example.entity.User;
+import com.dao.example.entity.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

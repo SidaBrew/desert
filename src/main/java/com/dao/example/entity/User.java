@@ -1,4 +1,4 @@
-package com.example.entity;
+package com.dao.example.entity;
 
 import java.io.Serializable;
 

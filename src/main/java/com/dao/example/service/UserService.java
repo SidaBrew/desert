@@ -1,7 +1,7 @@
-package com.example.service;
+package com.dao.example.service;
 
-import com.example.entity.User;
-import com.example.mapper.UserMapper;
+import com.dao.example.entity.User;
+import com.dao.example.mapper.UserMapper;
 import com.github.pagehelper.PageHelper;
 import com.utils.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;

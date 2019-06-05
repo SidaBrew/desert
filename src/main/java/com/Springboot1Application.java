@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Properties;
 
-@MapperScan("com.example.mapper")
+@MapperScan("com.dao")
 @SpringBootApplication
 @RestController
 @EnableConfigurationProperties({ConfigBean.class})
@@ -36,7 +36,5 @@ public class Springboot1Application extends SpringBootServletInitializer {
 		pageHelper.setProperties(p);
 		return pageHelper;
 	}
-
-
 
 }

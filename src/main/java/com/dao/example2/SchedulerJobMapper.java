@@ -1,7 +1,5 @@
-package com.example2;
+package com.dao.example2;
 
-import com.example2.SchedulerJob;
-import com.example2.SchedulerJobExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

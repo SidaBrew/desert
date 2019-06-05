@@ -1,7 +1,7 @@
-package com.example2.service;
+package com.dao.example2.service;
 
-import com.example2.SchedulerJob;
-import com.example2.SchedulerJobMapper;
+import com.dao.example2.SchedulerJob;
+import com.dao.example2.SchedulerJobMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

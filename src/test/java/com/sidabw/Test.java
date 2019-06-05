@@ -1,15 +1,12 @@
 package com.sidabw;
 
-import com.example.entity.User;
-import com.example.service.UserService;
-import com.example2.service.SchedulerJobService;
-import org.junit.Assert;
+import com.dao.example.entity.User;
+import com.dao.example.service.UserService;
+import com.dao.example2.service.SchedulerJobService;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.List;
 
 /***
  *  Created by shao.guangze on 2019/3/22
