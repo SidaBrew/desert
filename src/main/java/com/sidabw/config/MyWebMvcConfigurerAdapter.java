@@ -1,6 +1,7 @@
 package com.sidabw.config;
 
 import com.sidabw.config.MyInterceptor;
+import com.system.utils.Interceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.*;
 
@@ -31,7 +32,7 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
      */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/toh").setViewName("hello");
+        registry.addViewController("/loginJsp").setViewName("login");
         super.addViewControllers(registry);
     }
 
@@ -44,7 +45,7 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
 
         // addPathPatterns 用于添加拦截规则
         // excludePathPatterns 用户排除拦截
-        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/login");
+        registry.addInterceptor(new Interceptor()).addPathPatterns("/**").excludePathPatterns("/login/dologin","/loginJsp");
         super.addInterceptors(registry);
 
     }

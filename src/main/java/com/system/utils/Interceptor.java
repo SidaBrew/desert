@@ -1,4 +1,4 @@
-package system.utils;
+package com.system.utils;
 
 import com.github.pagehelper.util.StringUtil;
 import org.springframework.util.StringUtils;
@@ -13,6 +13,7 @@ public class Interceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        System.out.println(111111);
        boolean flag = true;
         HttpSession session = request.getSession();
         String username = (String)session.getAttribute("username");

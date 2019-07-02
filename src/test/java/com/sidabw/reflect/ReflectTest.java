@@ -1,7 +1,4 @@
-package com.reflect;
-
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+package com.sidabw.reflect;
 
 /***
  *  Created by shao.guangze on 2019/3/22
@@ -20,7 +17,7 @@ public class ReflectTest {
         Baby baby = new Baby();
         Class<? extends Baby> aClass = baby.getClass();
         System.out.println("对象.getClass:"+aClass);
-        Class<?> aClass1 = Class.forName("com.reflect.Baby");
+        Class<?> aClass1 = Class.forName("com.sidabw.reflect.Baby");
         System.out.println("Class.forName:"+aClass1);
 
 

@@ -1,17 +1,30 @@
-package system.controller;
+package com.system.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
+@RequestMapping("login")
 public class LoginController {
 
-    @RequestMapping("/login")
+    /**
+     *
+     * 跳转登陆页面
+     * @param request
+     * @return
+     */
+//    @RequestMapping("/loginJsp")
+//    public String loginJsp(HttpServletRequest request){
+//
+//
+//        return  "WEB-INF/jsp/login.jsp";
+//    }
+
+    @RequestMapping("/dologin")
     public String doLogin(HttpServletRequest request,String usrename, String password){
         HttpSession session = request.getSession();
         //判断是否是第一次 存入session 用户信息
