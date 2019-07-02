@@ -7,7 +7,9 @@ import com.utils.PageBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /***
  *  Created by shao.guangze on 2019/5/31
@@ -37,5 +39,33 @@ public class UserService {
         PageBean pageData = new PageBean(currentPage, pageSize);
         pageData.setItems(allItems);
         return pageData.getItems();
+    }
+
+
+    public void mehtod (){
+        String a = "";
+        if("".equals(a)){
+            System.out.println("会报错吗？");
+        }
+        System.out.println("is null");
+    }
+
+    public int[] sum (){
+      int nums[] = new int[] {3,2,4};
+        int result[] = new int[2];
+        Map<Integer,Integer> map = new HashMap();
+      int target = 6;
+      for(int i=0;i<nums.length;i++){
+          for (int j = i+1;j<nums.length;j++){
+
+              if(map.containsKey(target-nums[i])){
+                  result[0]= i;
+                  result[1] = map.get(target-nums[i]);
+              }
+              map.put(nums[i],i);
+          }
+
+      }
+        return  result;
     }
 }

@@ -32,4 +32,17 @@ public class Test {
 
     }
 
+    @org.junit.Test
+    public  void method(){
+
+//  userService.mehtod();
+//  System.out.println("空的就是空的");
+        int[] sum = userService.sum();
+        for (int i =0;sum.length>0;i++){
+          //  System.out.println(sum[i]);
+        }
+    }
+
+
+
 }
