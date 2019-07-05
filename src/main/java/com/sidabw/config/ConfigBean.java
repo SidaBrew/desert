@@ -5,11 +5,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * Created by Administrator on 2019/2/21.
  */
-@ConfigurationProperties(prefix = "com.sidabw")
+@ConfigurationProperties(prefix = "com.dudu")
 public class ConfigBean {
     private  String name;
     private  String want;
-    private  String  yeahhope;
+    private  String  yearhope;
 
     public String getName() {
         return name;
@@ -27,11 +27,11 @@ public class ConfigBean {
         this.want = want;
     }
 
-    public String getYeahhope() {
-        return yeahhope;
+    public String getYearhope() {
+        return yearhope;
     }
 
-    public void setYeahhope(String yeahhope) {
-        this.yeahhope = yeahhope;
+    public void setYearhope(String yearhope) {
+        this.yearhope = yearhope;
     }
 }

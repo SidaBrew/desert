@@ -18,7 +18,8 @@ public class MyInterceptor implements HandlerInterceptor {
         System.out.println("preHandle");
         boolean flag =true;
        Object username =request.getSession().getAttribute("username");
-        if(null==username){
+        Object password =request.getSession().getAttribute("password");
+        if(null==username || null==password ){
             //response.sendRedirect("/login");
            // response.setStatus(401);
             flag = false;

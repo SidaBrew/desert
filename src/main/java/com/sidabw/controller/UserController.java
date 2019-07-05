@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.sidabw.config.ConfigBean;
 import com.sidabw.config.ConfigTestBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +20,17 @@ public class UserController {
     ConfigTestBean configTestBean;
     @Autowired
     ConfigBean configBean;
+    @Value(value="${com.dudu.name}")
+    private  String name;
+    @Value(value="${com.dudu.want}")
+    private  String want;
+    @RequestMapping("/value")
+    public String value() {
+      //  return name+","+ want;
+      //  return configBean.getName()+","+ configBean.getWant();
+      //  return  configBean.getYearhope();
+        return  configTestBean.getWant()+configTestBean.getName();
+    }
 
     @RequestMapping("/")
     public String hexo() {
@@ -97,5 +109,8 @@ public class UserController {
         for (int i = 1;i<a.size();i++)
             System.out.println(a.get(i));
 }
+
+
+
 }
 

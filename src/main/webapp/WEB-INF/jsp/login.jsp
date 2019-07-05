@@ -15,7 +15,7 @@
 <br><br><br>
    <h3 align = "center">登录页面</h3>
    <hr>
-     <form align = "center" action="/login" method="get">
+     <form align = "center" action="/login/dologin" method="get">
              <table align = "center" border="0">
                  <tr><td>用户名</td><td><input type="text" name="username" ></td></tr>
                  <tr><td>密码</td><td><input type="password" name="password" ></td></tr>

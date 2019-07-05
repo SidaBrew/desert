@@ -1,9 +1,14 @@
 package com.sidabw.config;
 
 import com.sidabw.config.MyInterceptor;
-import com.system.utils.Interceptor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.*;
+
+import java.nio.charset.Charset;
+import java.util.List;
 
 /***
  *  Created by shao.guangze on 2019/5/27
@@ -30,11 +35,11 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
      * 在这里配置后就不需要那么麻烦了，直接访问http://localhost:8080/toLogin就跳转到login.htm页面了
      * @param registry
      */
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/loginJsp").setViewName("login");
-        super.addViewControllers(registry);
-    }
+//    @Override
+//    public void addViewControllers(ViewControllerRegistry registry) {
+//        registry.addViewController("/login/loginJsp").setViewName("login");
+//        super.addViewControllers(registry);
+//    }
 
     /**
      * 拦截器
@@ -45,8 +50,25 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
 
         // addPathPatterns 用于添加拦截规则
         // excludePathPatterns 用户排除拦截
-        registry.addInterceptor(new Interceptor()).addPathPatterns("/**").excludePathPatterns("/login/dologin","/loginJsp");
-        super.addInterceptors(registry);
+//        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/login/dologin","/login/**");
+//        super.addInterceptors(registry);
 
     }
+
+    @Bean
+    public HttpMessageConverter<String> responseBodyConverter() {
+        StringHttpMessageConverter converter = new StringHttpMessageConverter(
+                Charset.forName("UTF-8"));
+        return converter;
+    }
+    @Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        super.configureMessageConverters(converters);
+        converters.add(responseBodyConverter());
+    }
+    @Override
+    public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
+        configurer.favorPathExtension(false);
+    }
+
 }

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("login")
+@RequestMapping("/login")
 public class LoginController {
 
     /**
@@ -17,15 +17,16 @@ public class LoginController {
      * @param request
      * @return
      */
-//    @RequestMapping("/loginJsp")
-//    public String loginJsp(HttpServletRequest request){
-//
-//
-//        return  "WEB-INF/jsp/login.jsp";
-//    }
+    @RequestMapping("/loginJsp")
+    public String loginJsp(HttpServletRequest request){
+        System.out.println("loginJsp");
+
+        return  "/webapp/WEB-INF/jsp/login.jsp";
+    }
 
     @RequestMapping("/dologin")
     public String doLogin(HttpServletRequest request,String usrename, String password){
+        System.out.println("dologin");
         HttpSession session = request.getSession();
         //判断是否是第一次 存入session 用户信息
         if(StringUtils.isEmpty(usrename)|| StringUtils.isEmpty(password)){
@@ -42,7 +43,9 @@ public class LoginController {
     }
 
     @RequestMapping("/a/b")
-    public void method(){
+    public String method(){
         System.out.println("可以访问/a/b");
+
+        return "redirect:/login";
     }
 }

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource;
  */
 @Configuration
 @ConfigurationProperties(prefix = "com.md")
-//@PropertySource("classpath:test.properties")
+@PropertySource("classpath:/config/test.properties")
 public class ConfigTestBean {
     private  String  name;
     private  String  want;
