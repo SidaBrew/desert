@@ -17,12 +17,12 @@ public class LoginController {
      * @param request
      * @return
      */
-    @RequestMapping("/loginJsp")
-    public String loginJsp(HttpServletRequest request){
-        System.out.println("loginJsp");
-
-        return  "/webapp/WEB-INF/jsp/login.jsp";
-    }
+//    @RequestMapping("/loginJsp")
+//    public String loginJsp(HttpServletRequest request){
+//        System.out.println("loginJsp");
+//
+//        return  "/login";
+//    }
 
     @RequestMapping("/dologin")
     public String doLogin(HttpServletRequest request,String usrename, String password){
@@ -46,6 +46,6 @@ public class LoginController {
     public String method(){
         System.out.println("可以访问/a/b");
 
-        return "redirect:/login";
+        return "redirect:/login/dologin";
     }
 }
