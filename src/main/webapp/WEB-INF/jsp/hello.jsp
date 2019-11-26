@@ -7,25 +7,25 @@
 <title>Insert title here</title>
 	<script type="javascript">
 
-        //简单登录操作
-        $("#doLogin").click(function (e) {
-            $.ajax({
-                type : "POST",
-                url : "/login",
-                data : {
-                    "userName" : $("#userName").val(),
-                    "password" : $("#password").val()
-                },
-                dataType : "json",
-                success : function(data) {
-                    if (data.result == "1") {
-                        window.location.href ="/learn";
-                    } else {
-                        alert("账号密码不能为空！");
-                    }
-                }
-            });
-        });
+        // //简单登录操作
+        // $("#doLogin").click(function (e) {
+        //     $.ajax({
+        //         type : "POST",
+        //         url : "/login",
+        //         data : {
+        //             "userName" : $("#userName").val(),
+        //             "password" : $("#password").val()
+        //         },
+        //         dataType : "json",
+        //         success : function(data) {
+        //             if (data.result == "1") {
+        //                 window.location.href ="/learn";
+        //             } else {
+        //                 alert("账号密码不能为空！");
+        //             }
+        //         }
+        //     });
+        // });
 	</script>
 </head>
 <body>
@@ -34,8 +34,8 @@
 		<%--password:<input type="text" name="password"/><br/>--%>
 		<%--<input type="submit" value="提交"/>--%>
 	<%--</form>--%>
+你就是邵光泽
 
-
-你就是你。
+	你就是你。
 </body>
 </html>

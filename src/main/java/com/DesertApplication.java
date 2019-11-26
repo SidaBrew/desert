@@ -16,13 +16,12 @@ import java.util.Properties;
 @SpringBootApplication
 @RestController
 @EnableConfigurationProperties({ConfigBean.class})
-public class Springboot1Application extends SpringBootServletInitializer {
+public class DesertApplication extends SpringBootServletInitializer {
 
 
 
 	public static void main(String[] args) {
-
-		SpringApplication.run(Springboot1Application.class, args);
+		SpringApplication.run(DesertApplication.class, args);
 	}
 
 	@Bean

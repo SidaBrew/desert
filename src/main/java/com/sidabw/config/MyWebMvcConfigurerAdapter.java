@@ -32,12 +32,13 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
 
     /**
      * 以前要访问一个页面需要先创建个Controller控制类，再写方法跳转到页面
-     * 在这里配置后就不需要那么麻烦了，直接访问http://localhost:8080/toLogin就跳转到login.htm页面了
+     * 在这里配置后就不需要那么麻烦了，直接访问http://localhost:8080/login/loginJsp就跳转到login.htm页面了
      * @param registry
      */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/login/loginJsp").setViewName("login");
+        registry.addViewController("/hello/helloJsp").setViewName("hello");
         super.addViewControllers(registry);
     }
 
@@ -49,8 +50,8 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry){
 
         // addPathPatterns 用于添加拦截规则
-        // excludePathPatterns 用户排除拦截
-        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/login/dologin","/login/*");
+        // excludePathPatterns 用户排除拦截 excludePathPatterns("/类路径/接口路径")不需要加项目名；/**代表/a/或/a/b
+        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/login/**");
         super.addInterceptors(registry);
 
     }
