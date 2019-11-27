@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class TestController {
 
     @ResponseBody
-    @RequestMapping("/test")
+    @RequestMapping("/userInfo")
     public String  testMetod(){
-        System.out.println("可以访问test");
+        System.out.println("可以访问userInfo");
         return "success";
 
     }
