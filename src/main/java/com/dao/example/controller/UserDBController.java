@@ -40,7 +40,6 @@ public class UserDBController {
 
 
     @RequestMapping("/itemsPage")
-
     public List<User> itemsPage(int currentPage, int pageSize) {
         return userService.findItemByPage(currentPage, pageSize);
     }
