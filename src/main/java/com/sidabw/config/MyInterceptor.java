@@ -1,9 +1,7 @@
 package com.sidabw.config;
 
-import org.apache.catalina.User;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,8 +17,9 @@ public class MyInterceptor implements HandlerInterceptor {
         boolean flag =true;
        Object username =request.getSession().getAttribute("username");
         if(null==username ){
-            response.sendRedirect("/desert/login/loginJsp");
-            //response.setStatus(401);
+            //response.sendRedirect("/desert/login/loginJsp");
+            //401：请求要求身份验证。 对于需要登录的网页，服务器返回此响应。
+            response.setStatus(401);
             flag = false;
         }else{
             flag = true;

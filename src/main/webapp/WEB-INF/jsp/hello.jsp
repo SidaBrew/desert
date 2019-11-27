@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 	<script type="javascript">
 
-        // //简单登录操作
+        //简单登录操作
         // $("#doLogin").click(function (e) {
         //     $.ajax({
         //         type : "POST",
@@ -26,16 +26,35 @@
         //         }
         //     });
         // });
+		function req() {
+			$.ajax({
+				url: "/test/test",
+				//data: {username: 'jenny'},
+				type: "POST",
+				//dataType: "json",
+				success: function(data) {
+					// data = eval("(" + data+ ")");
+					// data = jQuery.parseJSON(data);  // dataType注释了，故注意反序列化
+					// $("#ret").text(data.result);
+					if(data==401){
+						window.location.href("login");
+					}
+				}
+			});
+		}
 	</script>
 </head>
 <body>
-	<%--<form action="${pageContext.request.contextPath}/user/formtest" method="post">--%>
-		<%--username:<input type="text" name="username"/><br/>--%>
-		<%--password:<input type="text" name="password"/><br/>--%>
-		<%--<input type="submit" value="提交"/>--%>
-	<%--</form>--%>
-你就是邵光泽
+<%--	<form action="${pageContext.request.contextPath}/user/formtest" method="post">--%>
+<%--		username:<input type="text" name="username"/><br/>--%>
+<%--		password:<input type="text" name="password"/><br/>--%>
+<%--		<input type="submit" value="提交"/>--%>
+<%--	</form>--%>
 
-	你就是你。
+<input type="submit" value="提交" onclick="req()"/>
+你就是邵光泽。
+你就是你。
 </body>
+
+</html>
 </html>
