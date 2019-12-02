@@ -5,7 +5,7 @@
 <html>
 
 <head>
-<script type="text/javascript" src="/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="/static/jquery-1.8.2.min.js"></script>
 <script type="text/javascript">
     console.log(1);
     $.ajax({
@@ -14,10 +14,11 @@
         data: {"userName":"zhangsan","password":"lwsiis"},
         //async:true,
         success:function(data, textStatus, jqXHR){
-            console.log(data);
-            console.log(jqXHR.status);
-            if (jqXHR.status === 201) {
-                // window.location.href = "/login"
+            debugger;
+            // console.log(jqXHR.status);
+            if (jqXHR.status === 401) {
+             console.log(401);
+                //t window.location.href = "/login"
             }
         }
     });
