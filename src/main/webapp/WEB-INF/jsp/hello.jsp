@@ -6,6 +6,18 @@
 
 <head>
 <script type="text/javascript" src="/static/jquery-1.8.2.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<%--	<form action="${pageContext.request.contextPath}/user/formtest" method="post">--%>
+<%--		username:<input type="text" name="username"/><br/>--%>
+<%--		password:<input type="text" name="password"/><br/>--%>
+<%--		<input type="submit" value="提交"/>--%>
+<%--	</form>--%>
+
+你就是邵光泽。
+你就是你。
+</body>
 <script type="text/javascript">
     console.log(1);
     $.ajax({
@@ -14,12 +26,18 @@
         data: {"userName":"zhangsan","password":"lwsiis"},
         //async:true,
         success:function(data, textStatus, jqXHR){
-            debugger;
+            console.log(2);
             // console.log(jqXHR.status);
-            if (jqXHR.status === 401) {
-             console.log(401);
-                //t window.location.href = "/login"
-            }
+            // if (jqXHR.status === 401) {
+            //  console.log(401);
+            //  console.log(3);
+            //     //t window.location.href = "/login"
+            // }
+        },
+        error:function(xhr,textStatus,errorThrown){
+            console.log(textStatus);
+            console.log(xhr.status);
+            window.location.href = "/login/loginJsp"
         }
     });
     //简单登录操作
@@ -44,17 +62,5 @@
 
 
 </script>
-<title>Insert title here</title>
-</head>
-<body>
-<%--	<form action="${pageContext.request.contextPath}/user/formtest" method="post">--%>
-<%--		username:<input type="text" name="username"/><br/>--%>
-<%--		password:<input type="text" name="password"/><br/>--%>
-<%--		<input type="submit" value="提交"/>--%>
-<%--	</form>--%>
-
-你就是邵光泽。
-你就是你。
-</body>
 
 </html>
