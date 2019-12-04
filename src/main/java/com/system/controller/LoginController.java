@@ -31,12 +31,12 @@ public class LoginController {
         HttpSession session = request.getSession();
         //判断是否是第一次 存入session 用户信息
         if(StringUtils.isEmpty(userName)|| StringUtils.isEmpty(password)){
-            return "login";
+            return "login/loginJsp";
         }else{
             //与数据库进行校验,假定校验通过。写入session，放入用户信息。
             session.setAttribute("username",userName);
         }
-        return  "redirect:/desert/hello/helloJsp";
+        return  "redirect:/hello/helloJsp";
     }
 
 

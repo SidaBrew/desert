@@ -42,8 +42,34 @@
     });
 });
 </script>
+<--
+<script  type="text/javascript">
+    // var params = {"username", $("#username").val()}
+    //定义一个标志
+    var flag = false;
+    //value:输入的内容
+    //element:被校验的元素对象
+    //params：规则对应的参数值
+    //目的：对输入的username进行ajax校验
+    console.log( $("#Username").val())
+    console.log( 11111)
+    $.ajax({
+        "async":false,
+        "url":"http://localhost:8080/login/doLogin",
+        "data":{"userName":$("#Username").val()},
+        "type":"POST",
+        "dataType":"json",
+        "success":function(data){
+            flag = data.isExist;
+        }
+    });
+</script>
+
+
+**/
+
 <!--SIGN UP-->
-<h1>klasikal Login Form</h1>
+<h1>brew Login Form</h1>
 <div class="login-form">
     <div class="close"> </div>
     <div class="head-info">
@@ -55,7 +81,7 @@
     <div class="avtar">
         <img src="/static/images/avtar.png" />
     </div>
-    <form>
+    <form action= "/login/doLogin" method = "post">
         <input type="text" class="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" >
         <div class="key">
             <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
@@ -66,7 +92,7 @@
     </div>
 </div>
 <div class="copy-rights">
-    <p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="??????">??????</a> - Collect from <a href="http://www.cssmoban.com/" title="??????" target="_blank">??????</a></p>
+    <p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="brew">brew</a> - Collect from <a href="http://www.cssmoban.com/" title="sida" target="_blank">sida</a></p>
 </div>
 
 </body>
