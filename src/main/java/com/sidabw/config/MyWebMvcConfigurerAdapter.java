@@ -1,6 +1,5 @@
 package com.sidabw.config;
 
-import com.sidabw.config.MyInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -23,9 +22,9 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
         //访问内部的路径
-        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+        //registry.addResourceHandler("/my/**").addResourceLocations("classpath:/my/");
         //访问外部路径
-        //registry.addResourceHandler("/my/**").addResourceLocations("file:D:/my/");
+        registry.addResourceHandler("/my/**").addResourceLocations("file:D:/my/");
         super.addResourceHandlers(registry);
 
     }
@@ -51,7 +50,7 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
 
         // addPathPatterns 用于添加拦截规则
         // excludePathPatterns 用户排除拦截 excludePathPatterns("/类路径/接口路径")不需要加项目名；/**代表/a/或/a/b
-        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/login/**","/hello/*", "/static/*");
+        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/login/**","/hello/*");
         super.addInterceptors(registry);
 
     }
