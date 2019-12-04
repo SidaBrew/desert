@@ -42,7 +42,7 @@
     });
 });
 </script>
-<--
+<!--
 <script  type="text/javascript">
     // var params = {"username", $("#username").val()}
     //定义一个标志
@@ -64,10 +64,7 @@
         }
     });
 </script>
-
-
-**/
-
+-->
 <!--SIGN UP-->
 <h1>brew Login Form</h1>
 <div class="login-form">
@@ -81,19 +78,22 @@
     <div class="avtar">
         <img src="/static/images/avtar.png" />
     </div>
-    <form action= "/login/doLogin" method = "post">
-        <input type="text" class="text" value="Username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" >
+    <form action= "http://localhost:8080/login/doLogin" method = "post">
+        <input type="text" class="text" name="userName" value=""  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'userName';}" >
         <div class="key">
-            <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+            <input type="password" name="password" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+        </div>
+
+        <div class="signin">
+            <input type="submit" value="Login" >
         </div>
     </form>
-    <div class="signin">
-        <input type="submit" value="Login" >
-    </div>
 </div>
 <div class="copy-rights">
     <p>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="brew">brew</a> - Collect from <a href="http://www.cssmoban.com/" title="sida" target="_blank">sida</a></p>
 </div>
 
 </body>
+
+
 </html>

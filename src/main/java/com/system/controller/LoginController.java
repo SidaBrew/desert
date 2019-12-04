@@ -24,7 +24,6 @@ public class LoginController {
 //
 //        return  "/login";
 //    }
-    @ResponseBody
     @RequestMapping("/doLogin")
     public String doLogin(HttpServletRequest request,String userName, String password){
         System.out.println("doLogin");
