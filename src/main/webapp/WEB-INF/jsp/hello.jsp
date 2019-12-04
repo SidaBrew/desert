@@ -35,6 +35,7 @@
             // }
         },
         error:function(xhr,textStatus,errorThrown){
+            // col
             console.log(textStatus);
             console.log(xhr.status);
             window.location.href = "/login/loginJsp"
