@@ -13,18 +13,18 @@ public class MyInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("preHandle");
-        boolean flag =true;
-       Object username =request.getSession().getAttribute("username");
-        if(null==username ){
-            //response.sendRedirect("/desert/login/loginJsp");
-            //401：请求要求身份验证。 对于需要登录的网页，服务器返回此响应。
-            response.setStatus(401);
-            flag = false;
-        }else{
-            flag = true;
-        }
-        return flag;
+//        System.out.println("preHandle");
+//        boolean flag =true;
+//       Object username =request.getSession().getAttribute("username");
+//        if(null==username ){
+//            //response.sendRedirect("/desert/login/loginJsp");
+//            //401：请求要求身份验证。 对于需要登录的网页，服务器返回此响应。
+//            response.setStatus(401);
+//            flag = false;
+//        }else{
+//            flag = true;
+//        }
+        return true;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.system.controller;
+package com.sidabw.system.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
