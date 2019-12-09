@@ -17,9 +17,9 @@ public class MyInterceptor implements HandlerInterceptor {
         boolean flag =true;
        Object username =request.getSession().getAttribute("username");
         if(null==username ){
-            //response.sendRedirect("/desert/login/loginJsp");
+            response.sendRedirect("/login/loginJsp");
             //401：请求要求身份验证。 对于需要登录的网页，服务器返回此响应。
-            response.setStatus(401);
+            //response.setStatus(401);
             flag = false;
         }else{
             flag = true;

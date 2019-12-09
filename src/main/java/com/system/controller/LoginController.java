@@ -35,7 +35,8 @@ public class LoginController {
             //与数据库进行校验,假定校验通过。写入session，放入用户信息。
             session.setAttribute("username",userName);
         }
-        return  "redirect:/hello/helloJsp";
+        //return  "redirect:/hello/helloJsp";
+        return  "redirect:/mutilUpload";
     }
 
 
@@ -44,7 +45,7 @@ public class LoginController {
     public String method(){
         System.out.println("可以访问/a/b");
 
-        return "redirect:/desert/hello/helloJsp";
+        return "redirect:/hello/helloJsp";
     }
 
     @ResponseBody

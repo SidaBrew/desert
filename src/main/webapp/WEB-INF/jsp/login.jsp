@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: issuser
-  Date: 2019/7/2
-  Time: 16:53
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<html>--%>
 <%--<head>--%>
@@ -42,30 +35,7 @@
     });
 });
 </script>
-<!--
-<script  type="text/javascript">
-    // var params = {"username", $("#username").val()}
-    //定义一个标志
-    var flag = false;
-    //value:输入的内容
-    //element:被校验的元素对象
-    //params：规则对应的参数值
-    //目的：对输入的username进行ajax校验
-    console.log( $("#Username").val())
-    console.log( 11111)
-    $.ajax({
-        "async":false,
-        "url":"http://localhost:8080/login/doLogin",
-        "data":{"userName":$("#Username").val()},
-        "type":"POST",
-        "dataType":"json",
-        "success":function(data){
-            flag = data.isExist;
-        }
-    });
-</script>
--->
-<!--SIGN UP-->
+
 <h1>brew Login Form</h1>
 <div class="login-form">
     <div class="close"> </div>
