@@ -1,7 +1,7 @@
 package com;
 
 import com.github.pagehelper.PageHelper;
-import com.sidabw.config.ConfigBean;
+import com.sidabw.config.bean.ConfigBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,13 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Properties;
 
-@MapperScan("com.dao")
+@MapperScan("com.sidabw")
 @SpringBootApplication
 @RestController
-@EnableConfigurationProperties({ConfigBean.class})
 public class DesertApplication extends SpringBootServletInitializer {
-
-
 
 	public static void main(String[] args) {
 		SpringApplication.run(DesertApplication.class, args);
