@@ -14,6 +14,7 @@ public class BufferedReaderAndWriteTest {
         char[] chars = new char[1024];
         int len = 0;
         while ((len=br.read(chars))!=-1){
+            System.out.println( len);
             bw.write(chars,0,len);
         }
         //释放资源
