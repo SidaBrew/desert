@@ -52,7 +52,7 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
 
         // addPathPatterns 用于添加拦截规则
         // excludePathPatterns 用户排除拦截 excludePathPatterns("/类路径/接口路径")不需要加项目名；/**代表/a/或/a/b
-        registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/login/**","/hello/*", "/static/**");
+      //  registry.addInterceptor(new MyInterceptor()).addPathPatterns("/**").excludePathPatterns("/login/**","/hello/*", "/static/**");
         super.addInterceptors(registry);
 
     }

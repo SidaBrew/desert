@@ -1,25 +1,37 @@
 package com.sidabw;
 
+import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
 public class HttpClientTest {
+    private  static Logger logger = LoggerFactory.getLogger(HttpClientTest.class);
 
     public static void main(String args[]){
 
         //postMethod();
         // getMethod();
-        getPic();
+       // getPic();
 
+        String url = "http://localhost:8080/test/testDoPost";
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("date","1");
+        doPost(url,jsonObject);
     }
 
     //练习get请求方式
@@ -94,4 +106,35 @@ public class HttpClientTest {
 
     }
 
+    /**
+     * 使用HttpClient发送和接收JSON请求
+     */
+    public static JSONObject doPost(String url,JSONObject jsonDate){
+
+        //创建httpclient对象
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        //创建post请求
+        HttpPost httpPost = new HttpPost();
+        //返回结果
+        JSONObject response = null;
+        try {
+            StringEntity stringEntity = new StringEntity(jsonDate.toString());
+            stringEntity.setContentEncoding("utf-8");
+            //发送json数据需要设置contentType
+            stringEntity.setContentType("application/json");
+            httpPost.setEntity(stringEntity);
+            logger.info("请求报文{}：",httpPost);
+            HttpResponse res = httpClient.execute(httpPost);
+            if(res.getStatusLine().getStatusCode() == HttpStatus.SC_OK){
+
+                String result = EntityUtils.toString(res.getEntity());
+                //返回json格式
+                response = JSONObject.parseObject(result);
+            }
+        } catch (Exception e) {
+
+            logger.info("doPost调用接口"+ url +"发生异常");
+        }
+        return  response;
+    }
 }
