@@ -1,6 +1,6 @@
 package com.sidabw.service.Impl;
 
-import com.sidabw.dao.BlobTest;
+import com.sidabw.entity.BlobTest;
 import com.sidabw.dao.BlobTestMapper;
 import com.sidabw.service.BlobService;
 import org.springframework.beans.factory.annotation.Autowired;

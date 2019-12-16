@@ -1,4 +1,4 @@
-package com.sidabw.config;
+package com.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -40,6 +40,7 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
         registry.addViewController("/login/loginJsp").setViewName("login");
         registry.addViewController("/hello/helloJsp").setViewName("hello");
         registry.addViewController("/login/index").setViewName("index");
+        registry.addViewController("/page/upload").setViewName("upload");
         super.addViewControllers(registry);
     }
 

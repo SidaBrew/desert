@@ -1,4 +1,4 @@
-package com.sidabw;
+package com.jwt;
 
 import org.junit.Test;
 

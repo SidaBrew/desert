@@ -1,7 +1,7 @@
 package com.sidabw.dao;
 
-import com.sidabw.dao.BlobTest;
-import com.sidabw.dao.BlobTestExample;
+import com.sidabw.entity.BlobTest;
+
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,8 +1,4 @@
-package com.sidabw.config.bean;
-
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+package com.config.bean;
 
 /**
  * Created by Administrator on 2019/2/25.

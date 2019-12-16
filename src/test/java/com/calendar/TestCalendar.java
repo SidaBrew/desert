@@ -1,4 +1,4 @@
-package com.sidabw;
+package com.calendar;
 
 import org.junit.Test;
 

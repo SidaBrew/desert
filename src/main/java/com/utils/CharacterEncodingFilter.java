@@ -1,4 +1,4 @@
-package com.sidabw.utils;
+package com.utils;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

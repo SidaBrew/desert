@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.sidabw.dao.BlobTestMapper" >
-  <resultMap id="BaseResultMap" type="com.sidabw.dao.BlobTest" >
+  <resultMap id="BaseResultMap" type="com.sidabw.entity.BlobTest" >
     <id column="id" property="id" jdbcType="INTEGER" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.sidabw.dao.BlobTest" extends="BaseResultMap" >
+  <resultMap id="ResultMapWithBLOBs" type="com.sidabw.entity.BlobTest" extends="BaseResultMap" >
     <result column="file_content" property="fileContent" jdbcType="LONGVARBINARY" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -121,11 +121,11 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.sidabw.dao.BlobTest" >
+  <insert id="insert" parameterType="com.sidabw.entity.BlobTest" >
     insert into blob_test (id, file_content)
     values (#{id,jdbcType=INTEGER}, #{fileContent,jdbcType=LONGVARBINARY})
   </insert>
-  <insert id="insertSelective" parameterType="com.sidabw.dao.BlobTest" >
+  <insert id="insertSelective" parameterType="com.sidabw.entity.BlobTest" >
     insert into blob_test
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -179,7 +179,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.sidabw.dao.BlobTest" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.sidabw.entity.BlobTest" >
     update blob_test
     <set >
       <if test="fileContent != null" >
@@ -188,7 +188,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.sidabw.dao.BlobTest" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.sidabw.entity.BlobTest" >
     update blob_test
     set file_content = #{fileContent,jdbcType=LONGVARBINARY}
     where id = #{id,jdbcType=INTEGER}

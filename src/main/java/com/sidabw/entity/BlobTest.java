@@ -1,4 +1,4 @@
-package com.sidabw.dao;
+package com.sidabw.entity;
 
 import java.io.Serializable;
 

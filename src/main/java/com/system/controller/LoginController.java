@@ -1,9 +1,8 @@
-package com.sidabw.system.controller;
+package com.system.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -37,22 +36,5 @@ public class LoginController {
         }
         //return  "redirect:/hello/helloJsp";
         return  "redirect:/mutilUpload";
-    }
-
-
-    @ResponseBody
-    @RequestMapping("/a/b")
-    public String method(){
-        System.out.println("可以访问/a/b");
-
-        return "redirect:/hello/helloJsp";
-    }
-
-    @ResponseBody
-    @RequestMapping("/test")
-    public String  testMetod(){
-        System.out.println("可以访问test");
-        return "success";
-
     }
 }
