@@ -24,7 +24,7 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
 
         //访问内部的路径
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
-        registry.addResourceHandler("/**").addResourceLocations("classpath:/static/adminlte");
+        registry.addResourceHandler("/**").addResourceLocations("classpath:/static/adminlte/");
         //访问外部路径
         //registry.addResourceHandler("/my/**").addResourceLocations("file:D:/my/");
         super.addResourceHandlers(registry);
@@ -41,7 +41,7 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
         registry.addViewController("/login/loginJsp").setViewName("login");
         registry.addViewController("/hello/helloJsp").setViewName("hello");
         registry.addViewController("/page/upload").setViewName("upload");
-        registry.addViewController("/page/index").setViewName("index");
+        registry.addViewController("/index").setViewName("admin-lte/index");
         super.addViewControllers(registry);
     }
 
