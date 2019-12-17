@@ -75,16 +75,17 @@ public class HttpClientController {
      * @throws Exception
      */
     @RequestMapping(value = "/download",method = RequestMethod.GET)
-    public String downLoad(HttpServletResponse response) throws Exception {
+    public byte[] downLoad(HttpServletResponse response) throws Exception {
         String filename="1.txt";
         String filePath = "D:/temp" ;
         File file = new File(filePath + "/" + filename);
+        byte[] buffer = new byte[1024];
         if(file.exists()){ //判断文件父目录是否存在
             response.setContentType("application/vnd.ms-excel;charset=UTF-8");
             response.setCharacterEncoding("UTF-8");
             // response.setContentType("application/force-download");
             response.setHeader("Content-Disposition", "attachment;fileName=" +   java.net.URLEncoder.encode(filename,"UTF-8"));
-            byte[] buffer = new byte[1024];
+
             FileInputStream fis = null; //文件输入流
             BufferedInputStream bis = null;
 
@@ -126,7 +127,7 @@ public class HttpClientController {
             System.out.println("----------file download---" + filename);
 
         }
-        return "redirect:/hello/helloJsp";
+        return buffer;
     }
 
 

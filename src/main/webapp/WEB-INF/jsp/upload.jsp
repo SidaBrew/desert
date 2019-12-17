@@ -10,6 +10,7 @@
 <form method="post" action="/multiUploads" enctype="multipart/form-data">
     <input type="file" name="file"><br>
     <input type="submit" value="提交">
+    <a href="http://localhost:8080/http/download">下载</a>
 </form>
 </body>
 </html>

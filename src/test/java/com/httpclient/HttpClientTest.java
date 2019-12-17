@@ -51,14 +51,12 @@ public class HttpClientTest {
                 //获取实体
                 HttpEntity entity = response.getEntity();
                 InputStream inputStream = entity.getContent();
-                FileOutputStream fos = null;
+                FileOutputStream fos = new FileOutputStream(new File("D:/chrome-downloads/1.txt"));
                 byte[] bytes = new byte[1024];
                 while (inputStream.read(bytes)!=-1){
                     fos.write(bytes);
                 }
-                //FileUtils.copyToFile(inputStream, new File("d:/copy/1.jpg"));
-                //解析实体
-                System.out.println(EntityUtils.toString(entity, "utf-8"));
+//               FileUtils.copyToFile(inputStream, new File("d:/copy/1.txt"));
             }
             response.close();
             httpClient.close();
