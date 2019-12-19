@@ -7,11 +7,13 @@
     <title>单文件上传</title>
 </head>
 <body>
-<form method="post" action="/multiUploads" enctype="multipart/form-data">
+<form method="post" action="/http/multiUploads" enctype="multipart/form-data">
     <input type="file" name="file"><br>
     <input type="file" name="file"><br>
     <input type="file" name="file"><br>
     <input type="submit" value="提交">
+    <br/>
+    <a href="http://localhost:8080/http/download">下载</a>
 </form>
 </body>
 </html>

@@ -24,7 +24,7 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
 
         //访问内部的路径
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
-        registry.addResourceHandler("/**").addResourceLocations("classpath:/static/adminlte/");
+          registry.addResourceHandler("/**").addResourceLocations("classpath:/static/adminlte/");
         //访问外部路径
         //registry.addResourceHandler("/my/**").addResourceLocations("file:D:/my/");
         super.addResourceHandlers(registry);
@@ -38,9 +38,9 @@ public class MyWebMvcConfigurerAdapter extends WebMvcConfigurerAdapter {
      */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
+        //addViewController：访问路径 setViewName：实际文件名称
         registry.addViewController("/login/loginJsp").setViewName("login");
-        registry.addViewController("/hello/helloJsp").setViewName("hello");
-        registry.addViewController("/page/upload").setViewName("upload");
+        registry.addViewController("/page/upload").setViewName("multiUpload");
         registry.addViewController("/index").setViewName("admin-lte/index");
         super.addViewControllers(registry);
     }

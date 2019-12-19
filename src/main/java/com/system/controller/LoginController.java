@@ -35,6 +35,6 @@ public class LoginController {
             session.setAttribute("username",userName);
         }
         //return  "redirect:/hello/helloJsp";
-        return  "redirect:/mutilUpload";
+        return  "redirect:/page/upload";
     }
 }

@@ -174,7 +174,7 @@ public class HttpClientTest {
         //创建httpClient对象
         CloseableHttpClient httpClient = HttpClients.createDefault();
         //创建post请求
-        HttpPost httpPost = new HttpPost("http://localhost:8080/http/upload");
+        HttpPost httpPost = new HttpPost("http://localhost:8080/http/multiUploads");
         //组装数据
         FileInputStream inputStream = new FileInputStream(new File("/d:temp/1.jpg"));
         byte[] bytes = new byte[inputStream.available()];

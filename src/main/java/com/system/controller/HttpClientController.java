@@ -47,7 +47,7 @@ public class HttpClientController {
      * content-Type:multipart/form-data
      * @return
      */
-    @RequestMapping(value = "/upload",method = RequestMethod.POST)
+    @RequestMapping(value = "/multiUploads",method = RequestMethod.POST)
     public String upload(@RequestParam("file") MultipartFile[] file) {
 
         for (MultipartFile multipartFile :file) {
@@ -65,7 +65,7 @@ public class HttpClientController {
                 return "上传失败！";
             }
         }
-        return "上传成功！";
+        return "没有选择可上传文件！";
     }
 
     /**
