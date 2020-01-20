@@ -2,13 +2,12 @@
 //
 //import org.quartz.*;
 //import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 //import org.springframework.stereotype.Component;
 //
 //@Component
 //public class CronSchedulerJob {
 //    @Autowired
-//    private SchedulerFactoryBean schedulerFactoryBean;
+//    private SchedulerFactory schedulerFactoryBean;
 //
 //    public void schedulerJob1(Scheduler scheduler) throws SchedulerException {
 //
@@ -46,3 +45,4 @@
 //    }
 //
 //}
+//

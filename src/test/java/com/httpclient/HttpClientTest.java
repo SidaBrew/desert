@@ -38,13 +38,13 @@ public class HttpClientTest {
     //练习get请求方式
     @Test
     public  void get() {
-        //创建HttpClient实例
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        //创建HttpGet实例
-        HttpGet httpGet = new HttpGet("http://localhost:8080/http/download");
-        CloseableHttpResponse response = null;
 
         try {
+            //创建HttpClient实例
+            CloseableHttpClient httpClient = HttpClients.createDefault();
+            //创建HttpGet实例
+            HttpGet httpGet = new HttpGet("http://localhost:8080/http/download");
+            CloseableHttpResponse response = null;
             response = httpClient.execute(httpGet);
             if (response !=null) {
 
@@ -60,7 +60,7 @@ public class HttpClientTest {
             }
             response.close();
             httpClient.close();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -85,7 +85,7 @@ public class HttpClientTest {
 
             httpclient.close();
             httpentity.close();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -171,24 +171,24 @@ public class HttpClientTest {
     @Test
     public void postMultipartFile() throws Exception {
 
-        //创建httpClient对象
-        CloseableHttpClient httpClient = HttpClients.createDefault();
-        //创建post请求
-        HttpPost httpPost = new HttpPost("http://localhost:8080/http/multiUploads");
-        //组装数据
-        FileInputStream inputStream = new FileInputStream(new File("/d:temp/1.jpg"));
-        byte[] bytes = new byte[inputStream.available()];
-        inputStream.read(bytes);
-
-        MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-        builder.setCharset(Charset.forName("utf-8"));
-        //解决中文乱码问题
-        builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
-        builder.addBinaryBody("file", bytes, ContentType.DEFAULT_BINARY, "1.jpg");
-        HttpEntity entity = builder.build();
-        httpPost.setEntity(entity);
-        CloseableHttpResponse response = null;
         try {
+            //创建httpClient对象
+            CloseableHttpClient httpClient = HttpClients.createDefault();
+            //创建post请求
+            HttpPost httpPost = new HttpPost("http://localhost:8080/http/multiUploads");
+            //组装数据
+            FileInputStream inputStream = new FileInputStream(new File("/d:temp/1.jpg"));
+            byte[] bytes = new byte[inputStream.available()];
+            inputStream.read(bytes);
+
+            MultipartEntityBuilder builder = MultipartEntityBuilder.create();
+            builder.setCharset(Charset.forName("utf-8"));
+            //解决中文乱码问题
+            builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
+            builder.addBinaryBody("file", bytes, ContentType.DEFAULT_BINARY, "1.jpg");
+            HttpEntity entity = builder.build();
+            httpPost.setEntity(entity);
+            CloseableHttpResponse response = null;
             //通过httpclient发送post请求
             response = httpClient.execute(httpPost);
             if (response != null) {
@@ -198,7 +198,7 @@ public class HttpClientTest {
             }
             httpClient.close();
             response.close();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

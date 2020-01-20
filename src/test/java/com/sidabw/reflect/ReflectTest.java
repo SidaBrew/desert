@@ -25,9 +25,12 @@ public class ReflectTest {
 
     public static void main(String[] args) throws ClassNotFoundException {
 
-        ReflectTest test = new ReflectTest();
+//        ReflectTest test = new ReflectTest();
+//
+//        test.testGetClass();
 
-        test.testGetClass();
+        String a = new String("sida");
+
 
     }
 
