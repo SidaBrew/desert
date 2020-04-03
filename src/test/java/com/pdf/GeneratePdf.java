@@ -1,13 +1,14 @@
 package com.pdf;
 
-import com.lowagie.text.*;
-import com.lowagie.text.pdf.BaseFont;
-import com.lowagie.text.pdf.PdfPCell;
-import com.lowagie.text.pdf.PdfPTable;
-import com.lowagie.text.pdf.PdfWriter;
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.io.FileOutputStream;
 
 public class GeneratePdf {
@@ -18,10 +19,28 @@ public class GeneratePdf {
 
     public static void main(String[] args) {
 
-        Createbatch();
+        String realPath = "d:/pdf";
+        String pdfname ="123456";
+        String filename = realPath+"/"+pdfname+".pdf";
+        String gifpath = "d:/temp";
+
+        File file = new File(realPath);
+        File gifFile = new File("d:/temp");
+        if(!file.exists()){
+
+            file.mkdirs();
+        }
+        if(!gifFile.exists()){
+
+            gifFile.mkdirs();
+        }
+
+        logger.info(filename);
+
+        Createbatch(filename,pdfname,gifpath);
     }
 
-    public static String Createbatch(){
+    public static String Createbatch(String filename,String pdfname,String gifpath){
 
         //创建文件
         Document document = new Document(PageSize.A4);
@@ -36,17 +55,17 @@ public class GeneratePdf {
             Font font11 = new Font(bf, 18, Font.BOLD);
             Font font12 = new Font(bf, 12, Font.BOLD);
             Font font13 = new Font(bf,3 , Font.NORMAL);
-        //生成的PDF文件名
-            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("pdf文件"));
+            //生成的PDF文件名
+            PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(filename));
 
             /************************左  右   上   下*************************/
             document.setMargins(36,36,36,36);
 
             //开始写PDF
             document.open();
-            String path ="d:/pdf";
             Image gif = null;
-            gif = Image.getInstance(path+"/images/tklogo.png");
+            gif = Image.getInstance(gifpath+"/images/tklogo.jpg");
+
             gif.setAlignment(Image.ALIGN_CENTER | Image.UNDERLYING);
             gif.setAlignment(Image.RIGHT);
             gif.scaleAbsolute(105.f,27.5f);
@@ -101,6 +120,7 @@ public class GeneratePdf {
             logger.info("err:不能生成指定个数的空格");
         }
 
+        //ZIPUtil.compress(examPath,path+"/exam-"+paperid+".zip" );		//压缩
         return str;
     }
 
