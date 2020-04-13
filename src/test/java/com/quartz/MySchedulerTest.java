@@ -18,12 +18,14 @@ public class MySchedulerTest {
         Date endDate = new Date();
         //距离当前时间6秒后结束
         endDate.setTime(endDate.getTime()+3000L);
+
         //1创建调度器Scheduler
         StdSchedulerFactory schedulerFactory  = new StdSchedulerFactory();
         Scheduler scheduler = schedulerFactory.getScheduler();
 
         //2创建JobDetail实例，并与JobTest类绑定(Job执行内容)
         JobDetail jobDetail = JobBuilder.newJob(JobTest.class).withIdentity("trigger1", "triggerGroup1").build();
+
         //3创建Tigger实例，每隔一秒执行一次
         Trigger trigger = TriggerBuilder.newTrigger().withIdentity("trigger1", "triggerGroup1")
 //                .startAt(date)
