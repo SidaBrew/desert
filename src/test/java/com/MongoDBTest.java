@@ -1,14 +1,10 @@
 package com;
 
-import com.mongodb.MongoClient;
-import com.mongodb.MongoCredential;
-import com.mongodb.ServerAddress;
 import com.mongodb.client.*;
 import com.mongodb.client.model.Filters;
 import org.bson.Document;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /***
@@ -23,11 +19,11 @@ public class MongoDBTest {
 //            ServerAddress serverAddress = new ServerAddress("localhost",27017);
 //            MongoCredential credential = MongoCredential.createScramSha1Credential("root","admin","root".toCharArray());
 //            MongoClient mongoClient = new MongoClient(Arrays.asList(serverAddress),Arrays.asList(credential));
-            com.mongodb.client.MongoClient mongoClient = MongoClients.create();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("test");
+//            com.mongodb.client.MongoClient mongoClient = MongoClients.create();
+//            MongoDatabase mongoDatabase = mongoClient.getDatabase("test");
 
 //            create(mongoDatabase);
-            find(mongoDatabase);
+//            find(mongoDatabase);
 //            add(mongoDatabase);
 //              update(mongoDatabase);
 //            delete(mongoDatabase);
