@@ -3,7 +3,7 @@ package com.sidabw;
 /***
  *  Created by shao.guangze on 2020/5/22
  */
-public class ArrayUtil {
+public class BubbleSort {
 
 
 

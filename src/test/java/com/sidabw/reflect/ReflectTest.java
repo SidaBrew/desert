@@ -1,5 +1,8 @@
 package com.sidabw.reflect;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 /***
  *  Created by shao.guangze on 2019/3/22
  */
@@ -11,7 +14,6 @@ public class ReflectTest {
 
     public void testGetClass() throws ClassNotFoundException {
 
-        Class clazz = null;
         Class<Baby> babyClass = Baby.class;
         System.out.println("通过类名.class:"+babyClass);
         Baby baby = new Baby();
@@ -23,14 +25,18 @@ public class ReflectTest {
 
     }
 
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) throws Exception{
 
 //        ReflectTest test = new ReflectTest();
 //
 //        test.testGetClass();
 
-        String a = new String("sida");
+//        String a = new String("sida");
 
+        Class<Baby> babyClass = Baby.class;
+        Constructor<Baby> constructors = babyClass.getConstructor(String.class,int.class,char.class);
+        Baby sida = constructors.newInstance("sida",1,'女');
+        System.out.println(sida);
 
     }
 

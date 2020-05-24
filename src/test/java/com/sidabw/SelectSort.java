@@ -35,7 +35,8 @@ public class SelectSort {
 
         int min;
 
-        for (int i = 0; i < length; i++) {
+        // 总共要经过 N-1 轮比较
+        for (int i = 0; i < length-1; i++) {
 
             min = i;
             // 找出"a[i+1] ... a[n]"之间的最小元素，并赋值给min。

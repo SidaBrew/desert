@@ -3,7 +3,7 @@ package com.sidabw.reflect;
 /***
  *  Created by shao.guangze on 2019/3/22
  */
-public class Baby extends Brew implements SidaInterface {
+public class Baby{
     String name;
     private  int age;
     public char sex='m';
@@ -15,6 +15,10 @@ public class Baby extends Brew implements SidaInterface {
         this.name = name;
         this.age = age;
         this.sex = sex;
+    }
+
+    public Baby(String name) {
+        this.name = name;
     }
 
     public String getName() {
