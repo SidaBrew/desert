@@ -1,6 +1,5 @@
 package com.aop.annotation;
 
-import com.utils.StringUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -43,14 +42,13 @@ public class LogAspect {
             //TODO 查询Redis
             //连接本地的 Redis 服务
             Jedis jedis = new Jedis("localhost");
-            String runoobkey = jedis.get("runoobkey");
             //TODO 判断Redis是否有数据
-            if(StringUtil.notNullOrEmpty(runoobkey)){
-
+            if(!jedis.exists("runoobkey")){
+                //没有则去查询数据库接口
+                pjp.proceed();
+            }else{
                 //TODO 如果有返回 没有则去查询数据库接口
                 System.out.printf("redis中有数据直接返回给页面");
-            }else{
-                pjp.proceed();
                 //TODO 将数据添加到Redis
             }
 

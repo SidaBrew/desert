@@ -1,9 +1,6 @@
 package com.aop;
 
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 @Aspect
@@ -19,10 +16,10 @@ public class BrokerAspect {
 //
 //    }
 
-    @Pointcut("execution(public * com.aop..*(..))")
-    public void brokerAspect(){
-
-    }
+//    @Pointcut("execution(public * com.aop..*(..))")
+//    public void brokerAspect(){
+//
+//    }
     /**
      * @description 在连接点执行之前的通知
      */
@@ -58,15 +55,15 @@ public class BrokerAspect {
     /**
      * @description  使用环绕通知
      */
-    @Around("brokerAspect()")
-    public void doAroundGame(ProceedingJoinPoint pjp) throws Throwable {
-        try{
-            System.out.println("经纪人正在处理球星赛前事务！");
-            pjp.proceed();
-            System.out.println("返回通知：经纪人为球星表现疯狂鼓掌！");
-        }
-        catch(Throwable e){
-            System.out.println("异常通知：球迷要求退票！");
-        }
-    }
+//    @Around("brokerAspect()")
+//    public void doAroundGame(ProceedingJoinPoint pjp) throws Throwable {
+//        try{
+//            System.out.println("经纪人正在处理球星赛前事务！");
+//            pjp.proceed();
+//            System.out.println("返回通知：经纪人为球星表现疯狂鼓掌！");
+//        }
+//        catch(Throwable e){
+//            System.out.println("异常通知：球迷要求退票！");
+//        }
+//    }
 }
